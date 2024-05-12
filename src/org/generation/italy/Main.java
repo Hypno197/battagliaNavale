@@ -11,7 +11,7 @@ public class Main {
 		Random rnd = new Random();
 		String[][] campo = new String[8][8];
 		String[][] campoPlayer = new String[8][8];
-		int versoNave, ordinateNave, ascisseNave, counter = 0, ordinateSparo, ascisseSparo;
+		int versoNave, ordinateNave, ascisseNave, counter = 0, ordinateSparo, ascisseSparo, colpiSparati=0;
 
 		for (int i = 0; i < 8; i++) {// scrivi griglia base
 			for (int j = 0; j < 8; j++) {
@@ -47,6 +47,7 @@ public class Main {
 				if (!campo[ordinateSparo][ascisseSparo].equals("~")) {
 					campoPlayer[ordinateSparo][ascisseSparo] = "X";
 					counter++;
+					colpiSparati++;
 					if (counter < 3)
 						System.out.println("Colpito!!");
 					else
@@ -54,6 +55,7 @@ public class Main {
 				} else {
 					System.out.println("Acqua!");
 					campoPlayer[ordinateSparo][ascisseSparo] = "o";
+					colpiSparati++;
 				}
 			} else
 				System.out.println("Fuori dal campo!");
@@ -73,5 +75,6 @@ public class Main {
 				+ "                                                                  \r\n"
 				+ "                                                                  \r\n"
 				+ "");
+		System.out.println("Colpi sparati: "+colpiSparati);
 	}
 }
