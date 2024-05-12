@@ -28,15 +28,15 @@ public class Main {
 				ordinateNave = rnd.nextInt(7);
 				ascisseNave = rnd.nextInt(8);
 				if (campo[ordinateNave][ascisseNave].equals("~") && campo[ordinateNave + 1][ascisseNave].equals("~")) {
-					campo[ordinateNave][ascisseNave] = "A"; // potevo usare un for
-					campo[ordinateNave + 1][ascisseNave] = "V";
+					campo[ordinateNave][ascisseNave] = "△"; // potevo usare un for
+					campo[ordinateNave + 1][ascisseNave] = "▽";
 				}
 			} else {// orizzontale
 				ordinateNave = rnd.nextInt(8);
 				ascisseNave = rnd.nextInt(7);
 				if (campo[ordinateNave][ascisseNave].equals("~") && campo[ordinateNave][ascisseNave + 1].equals("~")) {
-					campo[ordinateNave][ascisseNave] = "<";
-					campo[ordinateNave][ascisseNave + 1] = ">";
+					campo[ordinateNave][ascisseNave] = "◁";
+					campo[ordinateNave][ascisseNave + 1] = "▷";
 				}
 			}
 			for (int i = 0; i < 8; i++) {// conta navi
@@ -55,18 +55,18 @@ public class Main {
 				ascisseNave = rnd.nextInt(8);
 				if (campo[ordinateNave][ascisseNave].equals("~") && campo[ordinateNave + 1][ascisseNave].equals("~")
 						&& campo[ordinateNave + 2][ascisseNave].equals("~")) {
-					campo[ordinateNave][ascisseNave] = "A"; // potevo usare un for
-					campo[ordinateNave + 1][ascisseNave] = "o";
-					campo[ordinateNave + 2][ascisseNave] = "V";
+					campo[ordinateNave][ascisseNave] = "△"; // potevo usare un for
+					campo[ordinateNave + 1][ascisseNave] = "□";
+					campo[ordinateNave + 2][ascisseNave] = "▽";
 				}
 			} else {// orizzontale
 				ordinateNave = rnd.nextInt(8);
 				ascisseNave = rnd.nextInt(6);
 				if (campo[ordinateNave][ascisseNave].equals("~") && campo[ordinateNave][ascisseNave + 1].equals("~")
 						&& campo[ordinateNave][ascisseNave + 2].equals("~")) {
-					campo[ordinateNave][ascisseNave] = "<";
-					campo[ordinateNave][ascisseNave + 1] = "o";
-					campo[ordinateNave][ascisseNave + 2] = ">";
+					campo[ordinateNave][ascisseNave] = "◁";
+					campo[ordinateNave][ascisseNave + 1] = "□";
+					campo[ordinateNave][ascisseNave + 2] = "▷";
 				}
 			}
 			for (int i = 0; i < 8; i++) {// conta navi
@@ -79,16 +79,16 @@ public class Main {
 
 		do {
 		conteggioNavi = 0;
-		versoNave = rnd.nextInt(2);// posizionamento nave vericale/orizzontale da 3 blocchi
+		versoNave = rnd.nextInt(2);// posizionamento nave vericale/orizzontale da 4 blocchi
 		if (versoNave == 0) {// verticale
 			ordinateNave = rnd.nextInt(5);
 			ascisseNave = rnd.nextInt(8);
 			if (campo[ordinateNave][ascisseNave].equals("~") && campo[ordinateNave + 1][ascisseNave].equals("~")
 					&& campo[ordinateNave + 2][ascisseNave].equals("~") && campo[ordinateNave + 3][ascisseNave].equals("~")) {
-				campo[ordinateNave][ascisseNave] = "A"; // potevo usare un for
-				campo[ordinateNave + 1][ascisseNave] = "o";
-				campo[ordinateNave + 2][ascisseNave] = "o";
-				campo[ordinateNave + 3][ascisseNave] = "V";
+				campo[ordinateNave][ascisseNave] = "△"; // potevo usare un for
+				campo[ordinateNave + 1][ascisseNave] = "□";
+				campo[ordinateNave + 2][ascisseNave] = "□";
+				campo[ordinateNave + 3][ascisseNave] = "▽";
 			}
 		} else {// orizzontale
 			ordinateNave = rnd.nextInt(8);
@@ -96,10 +96,10 @@ public class Main {
 			if (campo[ordinateNave][ascisseNave].equals("~") && campo[ordinateNave][ascisseNave + 1].equals("~")
 					&& campo[ordinateNave][ascisseNave + 2].equals("~") 
 					&& campo[ordinateNave][ascisseNave + 3].equals("~")) {
-				campo[ordinateNave][ascisseNave] = "<";
-				campo[ordinateNave][ascisseNave + 1] = "o";
-				campo[ordinateNave][ascisseNave + 2] = "o";
-				campo[ordinateNave][ascisseNave + 3] = ">";
+				campo[ordinateNave][ascisseNave] = "◁";
+				campo[ordinateNave][ascisseNave + 1] = "□";
+				campo[ordinateNave][ascisseNave + 2] = "□";
+				campo[ordinateNave][ascisseNave + 3] = "▷";
 			}
 		}
 		for (int i = 0; i < 8; i++) {// conta navi
@@ -108,7 +108,7 @@ public class Main {
 					conteggioNavi++;
 			}
 		}
-		} while (conteggioNavi < 10);
+		} while (conteggioNavi < 14);
 //inizio ciclo mossa spari
 		do {
 
@@ -149,13 +149,14 @@ public class Main {
 				System.out.println();
 			}
 		} while (counter < conteggioNavi);
-		System.out.println("\r\n" + "██   ██  █████  ██     ██    ██ ██ ███    ██ ████████  ██████  ██ \r\n"
+		System.out.println("\r\n"
+				+ "██   ██  █████  ██     ██    ██ ██ ███    ██ ████████  ██████  ██ \r\n"
 				+ "██   ██ ██   ██ ██     ██    ██ ██ ████   ██    ██    ██    ██ ██ \r\n"
 				+ "███████ ███████ ██     ██    ██ ██ ██ ██  ██    ██    ██    ██ ██ \r\n"
 				+ "██   ██ ██   ██ ██      ██  ██  ██ ██  ██ ██    ██    ██    ██    \r\n"
 				+ "██   ██ ██   ██ ██       ████   ██ ██   ████    ██     ██████  ██ \r\n"
 				+ "                                                                  \r\n"
-				+ "                                                                  \r\n" + "");
-		System.out.println("Colpi sparati: " + colpiSparati);
+				+ "                                                                  \r\n"
+				+"       Colpi sparati: " + colpiSparati);
 	}
 }
